@@ -38,16 +38,12 @@ class User extends Authenticatable
     ];
 
 
-    public function question()
+    public function questions()
     {
         // definiamo la relazione anche su questo modello specificando che un utente ha molte question
         $this->hasMany(Question::class);
     }
 
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title']=$value;
-        $this->attributes['slug']=Str::slug($value);
-    }
+   
 
 }
